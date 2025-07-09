@@ -173,23 +173,24 @@ class _MyHomePageState extends State<MyHomePage> {
         _bmiImage = 'assets/images/normal.png';
         _bmiOutput = '${_bmi.toStringAsFixed(2)}[Normal weight]';
       }
-
-      void _resetScreen(){
-        _weighCtrl.clear();
-        _heightCtrl.clear();
-        setState(() {
-          _bmi = 0.0;
-          _bmiOutput = '';
-          _bmiImage = 'assets/images/empty.png';
-        });
-      }
-      @override
-      void dispose(){
-        // T000: implement dispose
-        super.dispose();
-        _heightCtrl.dispose();
-        _weighCtrl.dispose();
-      }
-    });
+    }
+    );
   }
+void _resetScreen(){
+  _weighCtrl.clear();
+  _heightCtrl.clear();
+  setState(() {
+    _bmi = 0.0;
+    _bmiOutput = '';
+    _bmiImage = 'assets/images/empty.png';
+  });
+
+}
+@override
+void dispose(){
+  // T000: implement dispose
+  super.dispose();
+  _heightCtrl.dispose();
+  _weighCtrl.dispose();
+}
 }
